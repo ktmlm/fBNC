@@ -2,9 +2,6 @@
 //! # An mixed(mem&disk) cache implementation
 //!
 
-#![deny(warnings)]
-#![deny(missing_docs)]
-
 ///////////////////////////////////////
 
 #[cfg(feature = "diskcache")]

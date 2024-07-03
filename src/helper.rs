@@ -50,6 +50,7 @@ pub(crate) fn rocksdb_clear() {
     for i in 0..DB_NUM {
         BNC[i]
             .iterator(rocksdb::IteratorMode::Start)
+            .map(|i| i.unwrap())
             .for_each(|(k, _)| {
                 pnk!(BNC[i].delete(k));
             });

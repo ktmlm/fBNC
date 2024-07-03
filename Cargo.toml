@@ -19,7 +19,7 @@ lazy_static = { version = "1.4.0" }
 num_cpus = "1.13.0"
 ruc = "1.0"
 
-rocksdb = { version = "0.17.0", default-features = false, features = ["lz4"], optional = true }
+rocksdb = { version = "0.22.0", default-features = false, features = ["lz4"], optional = true }
 
 [dev-dependencies]
 criterion = "0.3.5"

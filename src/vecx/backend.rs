@@ -158,7 +158,7 @@ where
 {
     type Item = (usize, T);
     fn next(&mut self) -> Option<Self::Item> {
-        self.iter.next().map(|(idx, v)| {
+        self.iter.next().map(|i| i.unwrap()).map(|(idx, v)| {
             (
                 usize::from_le_bytes(idx[..size_of::<usize>()].try_into().unwrap()),
                 pnk!(serde_json::from_slice(&v)),

@@ -175,7 +175,7 @@ where
 {
     type Item = (K, V);
     fn next(&mut self) -> Option<Self::Item> {
-        self.iter.next().map(|(k, v)| {
+        self.iter.next().map(|i| i.unwrap()).map(|(k, v)| {
             (
                 pnk!(bincode::deserialize(&k[self.hdr.prefix.len()..])),
                 pnk!(serde_json::from_slice(&v)),
